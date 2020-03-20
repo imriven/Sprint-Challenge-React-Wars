@@ -1,18 +1,38 @@
 import React from 'react';
+import { Card, CardTitle, CardText } from 'reactstrap';
 
 const Character = (props) => {
+const species = props.character.species[0]
+let whatSpecies;
+if (species === "https://swapi.co/api/species/1/") {
+  whatSpecies = "Human"
+} else if (species === "https://swapi.co/api/species/2/") {
+  whatSpecies = "Droid"
+} else if (species === "https://swapi.co/api/species/3/") {
+  whatSpecies = "Wookie"
+} else if (species === "https://swapi.co/api/species/4/") {
+  whatSpecies = "Rodian"
+} else if (species === "https://swapi.co/api/species/5/") {
+  whatSpecies = "Hutt"
+} else {
+  whatSpecies = "Other/Undisclosed"
+}
 
-  
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
 
-  // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
 
   return (
     <div>
-      <h1>{props.character.name}</h1>
+      <div>
+      <h1>Name: ${props.character.name}</h1>
+      </div>
+      <div>
+        <ul>
+
+        <li>Gender: {props.character.gender}</li>
+        <li>Species: ${whatSpecies}</li>
+        <li>Home: {props.character.homeworld}</li>
+        </ul>
+      </div>
     </div>
   );
 }
