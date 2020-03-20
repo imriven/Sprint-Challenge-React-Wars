@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 
 
@@ -14,8 +15,10 @@ const PageButtons = (props) => {
 
   return (
       <div>
-    {!props.data.previous ? null : <button onClick={props.handlePrevious}>Previous</button>}
-    {!props.data.next ? null : <button onClick={props.handleNext}>Next</button>}
+      <div>
+    {!props.data.previous ? null : <Button style={{color:"#00005c", margin: "5%", boxShadow: "5px 5px 3px rgba(46, 46, 46, 0.62)"}} outline onClick={props.handlePrevious}>Previous</Button>}
+    {!props.data.next ? null : <Button style={{ color:"#00005c", margin: "5%", boxShadow: "5px 5px 3px rgba(46, 46, 46, 0.62)"}} outline onClick={props.handleNext}>Next</Button>}
+    </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import Character from "./components/character"
 import './App.css';
 import axios from "axios";
 import PageButtons from "./components/pageButtons"
-import { Card, Row, CardTitle, CardText } from 'reactstrap';
+import { Row } from 'reactstrap';
 
 const App = () => {
 

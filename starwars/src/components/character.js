@@ -39,7 +39,7 @@ if (world === "https://swapi.co/api/planets/1/") {
   return (
     <Col sm="2">
       <div>
-      <Card inverse style={{ width: "15rem", margin: "10% 10% 25% 10%", boxShadow: "5px 5px 2px 2px #808080", lineHeight:"100%"}}>
+      <Card inverse style={{ width: "15rem", margin: "10% 10% 25% 10%", boxShadow: "5px 5px 3px rgba(46, 46, 46, 0.62)", lineHeight:"100%"}}>
         <CardImg width="100%" src={Image} alt="Card image cap" />
         <CardImgOverlay>
           <CardTitle>Name: {props.character.name}</CardTitle>
