@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from '../img/cardBackground.jpg'
-import { Card, Col, CardTitle, CardText } from 'reactstrap';
-import Styled from "styled-components"
+import { Card, Col, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
+
 
 
 
@@ -38,12 +38,18 @@ if (world === "https://swapi.co/api/planets/1/") {
 
   return (
     <Col sm="2">
-      <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333', width: "15rem", margin: "5%", boxShadow: "10px 10px 8px 10px ##808080" }}>
-        <CardTitle>Name: {props.character.name}</CardTitle>
-        <CardText>Gender: {props.character.gender}</CardText>
-        <CardText>Species: {whatSpecies}</CardText>
-        <CardText>Home: {whatWorld}</CardText>
+      <div>
+      <Card inverse style={{ width: "15rem", margin: "10% 10% 25% 10%", boxShadow: "5px 5px 2px 2px #808080", lineHeight:"100%"}}>
+        <CardImg width="100%" src={Image} alt="Card image cap" />
+        <CardImgOverlay>
+          <CardTitle>Name: {props.character.name}</CardTitle>
+          <CardText>Gender: {props.character.gender}</CardText>
+          <CardText>Species: {whatSpecies}</CardText>
+          <CardText>Home: {whatWorld}
+          </CardText>
+        </CardImgOverlay>
       </Card>
+    </div>
     </Col>
   );
 }
