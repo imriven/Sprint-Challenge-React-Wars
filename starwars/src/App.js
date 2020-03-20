@@ -3,6 +3,7 @@ import Character from "./components/character"
 import './App.css';
 import axios from "axios";
 import PageButtons from "./components/pageButtons"
+import { Card, Row, CardTitle, CardText } from 'reactstrap';
 
 const App = () => {
 
@@ -31,7 +32,9 @@ if (!data) return <h2>Loading</h2>
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <Row>
       {data.results.map(currentCharacter => <Character character={currentCharacter} />)}
+    </Row>
     <PageButtons handleNext={handleNext} handlePrevious={handlePrevious} data={data} />
     </div>
   );

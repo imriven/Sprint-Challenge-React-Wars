@@ -1,5 +1,9 @@
 import React from 'react';
-import { Card, CardTitle, CardText } from 'reactstrap';
+import Image from '../img/cardBackground.jpg'
+import { Card, Col, CardTitle, CardText } from 'reactstrap';
+import Styled from "styled-components"
+
+
 
 const Character = (props) => {
 const species = props.character.species[0]
@@ -18,22 +22,29 @@ if (species === "https://swapi.co/api/species/1/") {
   whatSpecies = "Other/Undisclosed"
 }
 
-
+const world = props.character.homeworld
+let whatWorld;
+if (world === "https://swapi.co/api/planets/1/") {
+  whatWorld = "Tatooine"
+} else if (world === "https://swapi.co/api/planets/26/") {
+  whatWorld = "Eriadu"
+} else if (world === "https://swapi.co/api/planets/28/") {
+  whatWorld = "Unknown"
+} else if (world === "https://swapi.co/api/planets/21/") {
+  whatWorld = "Naboo"
+} else {
+  whatWorld = "Other/Undisclosed"
+}
 
   return (
-    <div>
-      <div>
-      <h1>Name: ${props.character.name}</h1>
-      </div>
-      <div>
-        <ul>
-
-        <li>Gender: {props.character.gender}</li>
-        <li>Species: ${whatSpecies}</li>
-        <li>Home: {props.character.homeworld}</li>
-        </ul>
-      </div>
-    </div>
+    <Col sm="2">
+      <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333', width: "15rem", margin: "5%", boxShadow: "10px 10px 8px 10px ##808080" }}>
+        <CardTitle>Name: {props.character.name}</CardTitle>
+        <CardText>Gender: {props.character.gender}</CardText>
+        <CardText>Species: {whatSpecies}</CardText>
+        <CardText>Home: {whatWorld}</CardText>
+      </Card>
+    </Col>
   );
 }
 
